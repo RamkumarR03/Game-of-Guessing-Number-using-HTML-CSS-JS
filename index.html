@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border:5px solid rgb(2, 102, 3);
+            border-radius: 5px;
+            text-align: center;
+            width: 50%;
+            justify-content: center;
+            align-items: center;
+            margin: 200px 300px;
+            color: rgb(1, 1, 147);
+            margin-right:50px ;
+            background-color: rgb(230, 227, 223);
+            
+        }
+        input{
+            width:300px;
+            font-size: larger;
+            padding-left: 10px;
+            height: 70px;
+            background-color: aquamarine;
+            border-radius: 10px;
+           
+        }
+        input:hover{
+            background-color: rgb(220, 248, 138);
+        }
+        button{
+            width: 80px;
+            height: 40px;
+            color: aliceblue;
+            border-radius: 3px;
+            border: 3px  rgb(235, 4, 11);
+            background-color: brown;
+        }
+        button:hover{
+            background-color: chartreuse;
+            color: red;
+            font-weight: bolder;
+            border-radius: 3px;
+        }
+        p {
+            font-weight: bolder;
+            color:rgb(251, 5, 5)
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1 id="num">Guess the Number</h1><br>
+    
+    <input type="text" id="guessnumber"><br><br>
+    <button onclick="check()">Submit</button>
+    <h3 id="result">Your answer:</h3>
+    <p id="Score">Score:10</p>
+</div>
+</body>
+</html>
+
+<script>
+    var guessnumber=document.getElementById("guessnumber");
+    var result=document.getElementById("result");
+    var randomnumber=Math.floor(Math.random()*10)+1;
+    var score=document.getElementById("Score");
+    totalScore=10;
+
+
+    function check(){
+
+    var enterednumber=guessnumber.value;
+
+    if(randomnumber==enterednumber){
+        console.log("right");
+        result.textContent="Hey, Your answer is Right";
+        alert("You Won!");
+        totalScore=totalScore+1;
+        score.textContent="Score:"+totalScore;
+    }
+    else{
+        result.textContent="Your answer is Wrong!";
+        alert("Sorry, Try again");
+        totalScore=totalScore-1;
+        score.textContent="Score:"+totalScore;
+    }
+    }
+    
+    </script>
